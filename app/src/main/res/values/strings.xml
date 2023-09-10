@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">MIPT_PD2</string>
-        <string-array name="spinner_options">
+    <string name="enter_text">Enter text</string>
+    <string name="enter_text_to_count_words">Enter text to count words</string>
+    <string name="count">Count</string>
+    <string name="text_box_is_empty">Text box is empty</string>
+    <string-array name="spinner_options">
             <item>Words</item>
             <item>Symbols</item>
         </string-array>

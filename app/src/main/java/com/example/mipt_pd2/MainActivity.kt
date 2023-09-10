@@ -15,26 +15,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Set options for the spinner
-        val spinner = findViewById<Spinner>(R.id.spinner)
-        val adapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.spinner_options,
-            android.R.layout.simple_spinner_item
-        )
+        val spinner = findViewById<Spinner>(R.id.selectCountMethod)
+        val adapter = ArrayAdapter.createFromResource(this, R.array.spinner_options, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
 
-        val button = findViewById<Button>(R.id.button)
-        val resultText = findViewById<TextView>(R.id.textView2)
+        val button = findViewById<Button>(R.id.countButton)
+        val resultText = findViewById<TextView>(R.id.result)
 
         button.setOnClickListener {
-            val text = findViewById<EditText>(R.id.editTextTextMultiLine).text.toString().trim()
+            val text = findViewById<EditText>(R.id.txtInput).text.toString().trim()
+
             if (text.isEmpty()) {
-                Toast.makeText(this, "Text box is empty", Toast.LENGTH_SHORT).show()
-                resultText.text = "0"
+                Toast.makeText(this, getString(R.string.text_box_is_empty), Toast.LENGTH_SHORT)
+                    .show()
+                resultText.text = getString(R.string.text_box_is_empty)
             } else {
                 val wordCounter = WordCounter()
                 val selectedOption = spinner.selectedItem.toString()
+
                 if (selectedOption == "Words") {
                     resultText.text = wordCounter.countWords(text).toString()
                 }
