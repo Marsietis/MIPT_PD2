@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,10 +28,20 @@ class MainActivity : AppCompatActivity() {
         val resultText = findViewById<TextView>(R.id.textView2)
 
         button.setOnClickListener {
-            val text = findViewById<EditText>(R.id.editTextTextMultiLine).text.toString()
-            val wordCounter = WordCounter()
-            val result = wordCounter.countWords(text)
-            resultText.text = result.toString()
+            val text = findViewById<EditText>(R.id.editTextTextMultiLine).text.toString().trim()
+            if (text.isEmpty()) {
+                Toast.makeText(this, "Text box is empty", Toast.LENGTH_SHORT).show()
+                resultText.text = "0"
+            } else {
+                val wordCounter = WordCounter()
+                val selectedOption = spinner.selectedItem.toString()
+                if (selectedOption == "Words") {
+                    resultText.text = wordCounter.countWords(text).toString()
+                }
+                if (selectedOption == "Symbols") {
+                    resultText.text = wordCounter.countSymbols(text).toString()
+                }
+            }
         }
     }
 }
