@@ -60,14 +60,28 @@
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="181dp"
-        android:layout_height="41dp"
-        android:textAlignment="textStart"
+        android:layout_width="281dp"
+        android:layout_height="31dp"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.768"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countButton"
-        app:layout_constraintVertical_bias="0.273" />
+        app:layout_constraintVertical_bias="0.32" />
+
+    <TextView
+        android:id="@+id/resultTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/result"
+        app:layout_constraintEnd_toStartOf="@+id/result"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/result"
+        app:layout_constraintVertical_bias="0.346" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
