@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.mipt_pd2"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.mipt_pd2"
